@@ -9,7 +9,7 @@ const subLinks = [
     },
 
     {
-        page: 'developers',
+    page: 'developers',
         links: [
             {label: 'documentation', icon: 'fas fa-book', url: '#'},
             {label: 'API reference', icon: 'fas fa-code', url: '#'},
