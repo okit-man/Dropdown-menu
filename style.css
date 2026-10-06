@@ -93,17 +93,20 @@ li .link-btn {
     background: transparent;
     /* padding: 0.35rem 0.75rem; */
     padding: 10px 15px;
-    font-size: 1.3rem;
-    letter-spacing: 0.15rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.13rem;
     font-weight: 600;
     color: #333;
     text-transform: capitalize;
     cursor: pointer;
+    height: 100%;
+
 }
 .link-btn:hover {
     color: #f1f1f1;
 }
 /* the hero section */
+/*  this part ensures the hero section has a background image */
 .hero::before {
     content: '';
     position: absolute;
@@ -171,7 +174,7 @@ li .link-btn {
 
     display: grid;
     place-items: center;
-
+    /* this part of  the code ensure the sidebar is hidden by default in the big screen while it's visible on smaller screens */
     visibility: hidden;
     opacity: 0;
     transform: scale(0);
@@ -252,6 +255,80 @@ li .link-btn {
     margin-right: 0.5rem;
     color: hsl(210, 22%, 49%);
  }
+ /* dropdown menu */
+ .submenu {
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    display: none;
+    z-index: 3;
+    transform: translateX(-50%);
+}
+ .submenu::before {
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: -5px;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    transform: translateX(-50%);
+
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+
+ }
+ .submenu.show {
+    display: block;
+ }
+ .submenu-center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem 1.5rem;
+ }
+ .col-2 {
+    grid-template-rows: repeat(2, 1fr);
+ }
+ .col-3 {
+    grid-template-columns: repeat(3, 1fr);
+ }
+ .col-4 {
+    grid-template-columns: repeat(4, 1fr);
+ }
+ .submenu h4 {
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    color: #333;
+ }
+ .submenu a {
+    display: block;
+    text-decoration: none;
+    color: hsl(210, 22%, 49%);
+    font-size: 1rem;
+    width: 10rem;
+ }
+ .submenu a:hover {
+    /* color: #f1f1f1;
+    background-color: black;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    width: 100%; */
+ }
+ .submenu i {
+    margin-right: 0.5rem;
+    color: hsl(210, 22%, 49%);
+ }
 
 
 
@@ -261,7 +338,6 @@ li .link-btn {
     .nav-center {
         width: 92%;
         gap: 5rem;
-        /* background-color: red; */
     }
     .nav-logo {
         width: 100px;
@@ -277,10 +353,7 @@ li .link-btn {
         font-size: 1rem;
         padding: 0.25rem 0.55rem;
     }
-    .hero::before {
-        /* background-size: cover; */
-        /* height: 100%; */
-    }
+    
     .hero-center {
         /* width: 85vw; */
         max-width: 950px;
